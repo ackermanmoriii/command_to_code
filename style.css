@@ -1,0 +1,182 @@
+/* --- تنظیمات کلی --- */
+:root {
+  --color-primary: #4285F4; /* Google Blue */
+  --color-dark: #202124;
+  --color-light-gray: #f1f3f4;
+  --color-border: #dfe1e5;
+  --font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-light-gray);
+  color: var(--color-dark);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- ساختار صفحه --- */
+.screen {
+  display: none; /* در ابتدا همه مخفی */
+}
+.screen.active {
+  display: block; /* صفحه فعال نمایش داده می‌شود */
+}
+
+#api-key-screen .container {
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* --- المان‌های فرم --- */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* --- صفحه اصلی اپ --- */
+.settings-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.settings-bar label {
+  font-weight: 600;
+}
+.settings-bar input {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.prompt-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+textarea#prompt-input {
+  flex-grow: 1;
+  height: 120px;
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+#generate-btn {
+  font-size: 1.5rem;
+  padding: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- بخش جادویی خروجی --- */
+#output-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.display-column {
+  width: 50%;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 10px 20px;
+  min-height: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h3 {
+  border-bottom: 2px solid var(--color-light-gray);
+  padding-bottom: 10px;
+  color: var(--color-primary);
+}
+
+/* --- کارت‌های بخش‌بندی شده --- */
+.segment-card {
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 6px solid; /* نوار رنگی کنار */
+  background-color: #fafafa;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  direction: ltr; /* پرامپت انگلیسی و کد باید چپ‌چین باشند */
+  text-align: left;
+}
+
+.prompt-card {
+  line-height: 1.5;
+  font-style: italic;
+  color: #333;
+}
+
+/* استایل برای بلاک کد (Highlight.js) */
+.code-card pre {
+  margin: 0;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  /* رنگ پس‌زمینه توسط تم atom-one-dark.css تنظیم می‌شود */
+}
+.code-card {
+  padding: 0; /* padding به <pre> منتقل شد */
+}
+
+/* --- جادوی هاور (Hover) --- */
+.segment-card.is-hovered {
+  background-color: #e6f0ff; /* یک آبی بسیار روشن */
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 10;
+  position: relative;
+}

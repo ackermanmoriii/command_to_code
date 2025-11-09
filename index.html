@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Code Mapper</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="api-key-screen" class="screen active">
+    <div class="container">
+      <h2>✨ به Gemini Code Mapper خوش آمدید</h2>
+      <p>لطفاً Google Gemini API Key خود را برای شروع وارد کنید.</p>
+      <input type="password" id="api-key-input" placeholder="کلید API شما...">
+      <button id="start-btn">شروع</button>
+    </div>
+  </div>
+
+  <div id="main-app" class="screen">
+    
+    <div class="settings-bar">
+      <label for="language-input">زبان / فریمورک:</label>
+      <input type="text" id="language-input" placeholder="e.g., Python, React, pandas...">
+    </div>
+
+    <div class="prompt-container">
+      <textarea id="prompt-input" placeholder="پرامپت خود را به انگلیسی بنویسید... (Shift+Enter برای خط جدید)"></textarea>
+      <button id="generate-btn">
+        <span>🚀</span> Generate
+      </button>
+    </div>
+
+    <div id="output-container">
+      <div id="prompt-display" class="display-column">
+        <h3>پرامپت شما</h3>
+        </div>
+      <div id="code-display" class="display-column">
+        <h3>کد تولید شده</h3>
+        </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
